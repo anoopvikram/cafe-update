@@ -1,0 +1,352 @@
+ /* Reset and Global Styles */
+ body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Lora", serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #0a0404;
+  }
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  
+  
+  /* Navigation Bar */
+  nav {
+    position: relative; /* Ensure the pseudo-element is positioned correctly */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  /* Pseudo-element for blurred background */
+  nav::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(./images/frontpage.jpeg); /* Background image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(40px); /* Apply blur to the background */
+    z-index: -1; /* Ensure the blurred background stays behind the content */
+  }
+  
+.nav {
+  display: flex;
+  justify-content: space-between; /* Aligns items to left and right */
+  align-items: center; /* Vertically aligns items */
+  padding: 10px;
+}
+nav .logo{
+    font-size: large;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center; /* Aligns logo image and text vertically */
+}
+
+.logo-img {
+  margin-right: 10px; /* Adds space between image and text */
+}
+
+/* Default styles for ul (normal navigation) */
+ul {
+  list-style: none;
+  display: flex;
+}
+
+ul li {
+  margin: 0 15px;
+}
+
+ul li a {
+  text-decoration: none;
+}
+
+ul li:hover {
+  border-radius: 10px;
+  color: rgb(239, 185, 119);
+  transform: scale(1.1);
+}
+
+/* Hide secondary menu (div2) by default */
+.div2 {
+  display: none;
+}
+
+/* Styles for screens smaller than 460px */
+@media (max-width: 560px) {
+  html{
+    scroll-behavior: smooth;
+  }
+  /* Hide the normal navigation menu (ul inside nav) */
+  nav ul {
+    display: none;
+  }
+
+  /* Show the secondary menu (div2) */
+  .div2 {
+    display: flex;
+    list-style: none;
+    padding: 10px;
+    margin-top: 0px;
+    
+  }
+
+  .div2 li {
+    padding: 0px;
+    text-align: center;
+  }
+
+  .div2 li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  
+}
+
+/* Styles for screens wider than 460px (normal navigation menu visible) */
+@media (min-width: 561px) {
+  nav ul {
+    display: flex; /* Normal navigation bar */
+  }
+
+  .div2 {
+    display: none; /* Hide secondary menu */
+  }
+}
+
+
+
+/* Hero Section */
+  header {
+    background: url('./images/frontpage.jpeg') no-repeat center center/cover;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+  }
+
+  header .hero-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  header .hero-content p {
+    font-size: 1.2em;
+  }
+
+  /* Introduction Section */
+  .intro {
+    padding: 80px 40px;
+    background: #ededed;
+    text-align: center;
+  }
+  .intro h2 {
+    font-size: 2em;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  .intro p {
+    font-size: 1.1em;
+    color: #666;
+  }
+
+  /* Menu Section */
+#menu {
+    position: relative;
+    padding: 40px 20px;
+    text-align: center;
+    z-index: 1; /* Ensure content is above the blurred background */
+  }
+  
+  /* Blurred Background Image */
+  #menu::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('./images/frontpage.jpeg'); /* Replace with your desired image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(20px); /* Apply blur */
+    z-index: -1; /* Keep the blurred background behind content */
+  }
+  
+  /* Overlay Layer with Color */
+  .menu-overlay {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    padding: 40px 20px;
+    width: 60%; /* Width of the menu content area */
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  #menu h2 {
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    color: #fff;
+  }
+  
+
+  /* Menu Category */
+  .menu-category {
+    margin-bottom: 40px;
+  }
+
+  /* Menu Item Styles */
+  .menu-item {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    margin: 10px;
+    background: rgba(54, 27, 18, 0.625);
+    border-radius: 25px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .item-img-placeholder {
+    width: 200px;
+    height: 150px;
+    margin-bottom: 10px;
+    display: inline-block;
+    border-radius: 5px;
+  }
+
+  .menu-item p {
+    margin: 5px 0;
+    color: white;
+  }
+
+  .menu-item .price {
+    font-weight: bold;
+    color: #b7b7b7;
+  }
+
+  /* Menu Category Header */
+  .menu-category h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #fff;
+  }
+
+  /* About Us Section */
+  #about {
+    position: relative;
+    background-color: #ededed;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2em;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  #about p {
+    font-size: 1.1em;
+    color: #000000;
+  }
+
+  /* Contact Us Section */
+  #contact {
+    padding: 20px 40px;
+    background: #f9f9f9;
+    text-align: center;
+  }
+  #contact h2 {
+    font-size: 2em;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  #contact p {
+    font-size: 1em;
+    color: #555;
+    margin: 5px 0;
+  }
+
+  /* Footer */
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.9em;
+  }
+
+  /* Contact Section */
+/* Contact Section */
+#contact {
+  position: relative;
+  padding: 20px 40px;
+  text-align: center;
+  color: #fff; /* White text for contrast */
+  z-index: 1; /* Ensure content is above the blurred background */
+}
+
+/* Blurred Background Image */
+#contact::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('./images/frontpage.jpeg'); /* Replace with your desired image */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(12px) brightness(0.8); /* Apply blur to the background */
+  z-index: -1; /* Keep the blurred background behind content */ /* Add a dark tint over the blurred image */
+}
+#contact{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for text */
+#contact h2 {
+  color: white;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+#contact p {
+  color: white;
+  font-size: 1.1em;
+  margin: 5px 0;
+}
+
+section {
+  position: relative;
+  padding: 80px 20px;
+  background: #452b12; /* Replace with your section background */
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.5); /* Inner shadow for vignette */
+}
